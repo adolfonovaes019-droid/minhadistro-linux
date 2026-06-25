@@ -1,0 +1,40 @@
+# Arquivos de sistema Linux
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Diretórios virtuais (caso alguém clone do /)
+/proc/
+/sys/
+/dev/
+/run/
+/tmp/
+
+# Dados sensíveis
+*.key
+*.pem
+shadow
+passwd
+.Xauthority
+.bash_history
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Editores
+.vscode/
+.idea/
+*~
+
+# Build outputs
+build/
+dist/
+*.iso
+*.img
