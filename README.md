@@ -148,6 +148,15 @@ Isso impede que o DHCP sobrescreva as configurações de DNS.
 
 **Solução:** Ajuste manual do relógio com `sudo date -s "AAAA-MM-DD HH:MM:SS"`. Para sincronização permanente, configurar o NTP após o Wi-Fi estar funcional.
 
+### 11. Permissão de acesso à impressora USB no Linux
+Sintoma: Ao tentar finalizar um pedido no Aura System, aparecia a mensagem Sem permissão em /dev/usb/lp0.
+Causa raiz: No Linux, o dispositivo de impressora (/dev/usb/lp0) pertence ao grupo lp. O usuário não estava nesse grupo, portanto não tinha permissão de acesso ao dispositivo.
+
+Solução:
+bashsudo usermod -aG lp adolfo
+
+Após reiniciar a sessão, o usuário passa a ter acesso ao dispositivo de impressora. O próprio Aura System detectou o ambiente Linux e exibiu o comando correto na mensagem de erro — resultado das adaptações de compatibilidade feitas durante a portabilidade do Windows para o Linux.
+
 ---
 
 ## Comandos Principais Utilizados
